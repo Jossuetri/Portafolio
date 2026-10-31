@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/* Paleta del portafolio: usa clases como bg-surface, text-accent, text-muted */
+@theme {
+  --font-sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --color-bg: #0b0e1a;
+  --color-surface: #12162a;
+  --color-surface-2: #1a1f35;
+  --color-fg: #f5f6fa;
+  --color-fg-soft: #d6daeb;
+  --color-muted: #9ba3bf;
+  --color-subtle: #7c849f;
+  --color-accent: #f4763a;
+  --color-accent-2: #ff8c42;
+}
+
+:root {
+  line-height: 1.5;
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* evita que el header fijo tape los títulos al navegar con anclas */
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
