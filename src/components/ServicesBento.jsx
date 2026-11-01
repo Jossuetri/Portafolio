@@ -1,18 +1,17 @@
-import React from "react";
 import { SERVICES_BENTO } from "../data";
 
 function BentoCard({ icon: Icon, title, desc, large }) {
   return (
     <div
-      className={`rounded-2xl border border-white/10 bg-[#12162A] p-6 transition-colors hover:border-[#F4763A]/40 ${
+      className={`rounded-2xl border border-white/10 bg-surface p-6 transition-colors hover:border-accent/40 ${
         large ? "sm:p-8" : ""
       }`}
     >
-      <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#F4763A] to-[#FF8C42]">
+      <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-accent to-accent-2 text-bg">
         <Icon size={18} />
       </div>
       <h3 className={`font-semibold ${large ? "text-lg" : ""}`}>{title}</h3>
-      <p className="mt-2 text-sm text-[#9BA3BF]">{desc}</p>
+      <p className="mt-2 text-sm text-muted">{desc}</p>
     </div>
   );
 }
@@ -24,7 +23,7 @@ export default function ServicesBento() {
   return (
     <section id="skills" className="border-t border-white/5 px-6 py-20">
       <div className="mx-auto max-w-6xl text-center">
-        <span className="text-xs font-semibold tracking-widest text-[#F4763A]">
+        <span className="text-xs font-semibold tracking-widest text-accent">
           HABILIDADES Y SERVICIOS
         </span>
         <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Lo que hago mejor</h2>

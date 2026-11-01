@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -9,20 +8,22 @@ import TestimonialsAndFAQ from "./components/TestimonialsAndFAQ";
 import ContactCTA from "./components/ContactCTA";
 import Footer from "./components/Footer";
 
-export default function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
+function App() {
   return (
-    <div className="min-h-screen w-full bg-[#0B0E1A] text-[#F5F6FA] font-sans antialiased">
-      <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <Hero />
-      <About />
-      <ServicesBento />
-      <Projects />
-      <Milestones />
-      {/* <TestimonialsAndFAQ /> */}
-      <ContactCTA />
+    <div className="min-h-screen w-full bg-bg font-sans text-fg antialiased">
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Projects />
+        <ServicesBento />
+        <Milestones />
+        <TestimonialsAndFAQ />
+        <ContactCTA />
+      </main>
       <Footer />
     </div>
   );
 }
+
+export default App

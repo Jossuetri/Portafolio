@@ -2,47 +2,78 @@ import {
   Code2,
   Server,
   Database,
-  Cloud,
-  Layers,
-  Trophy,
-  Users,
+  BarChart3,
+  Smartphone,
   User,
   MapPin,
   Mail,
   CircleCheck,
   GraduationCap,
-  Rocket,
-  Briefcase,
-  BookOpen,
+  FlaskConical,
   Cpu,
-  Code,
+  Layers,
+  Rocket,
 } from "lucide-react";
 
 // ---------- EDITA AQUÍ TU INFORMACIÓN ----------
 
-export const NAV_LINKS = [
-  "Home",
-  "About",
-  "Skills",
-  "Projects",
-  "Achievements",
-  /*"Testimonials",*/
-  "Contact",
+export const PROFILE = {
+  name: "Jossue Aleajandro Eugenio Triana",
+  initials: "JA",
+  role: "DESARROLLADOR FULL-STACK & ANALISTA DE DATOS",
+  tagline:
+    "Construyo aplicaciones web y móviles y convierto datos en decisiones, desde la base de datos hasta el dashboard.",
+  email: "jossue.eugenio16@gmail.com",
+  phone: "3153732167",
+  location: "Bucaramanga, Santander, Colombia",
+  available: true,
+  cvUrl: "/cv_jossue4.pdf", // archivo en public/
+  github: "https://github.com/Jossuetri",
+  linkedin: "https://www.linkedin.com/in/jossue-eugenio",
+};
+
+// Cada elemento es un párrafo de la sección "Sobre mí"
+export const ABOUT_TEXT = [
+  "Soy estudiante de 4.º semestre de Tecnología en Desarrollo de Sistemas Informáticos en las Unidades Tecnológicas de Santander (UTS), con enfoque en desarrollo backend, full-stack y análisis de datos.",
+  "He construido una aplicación web con API REST en Laravel, frontend en Angular y base de datos PostgreSQL con triggers de auditoría, además de una app Android en Java con arquitectura MVVM. En datos, he trabajado proyectos de ventas, banca, salud e inmobiliario: limpieza y exploración con Python (pandas), consultas en SQL/PostgreSQL y dashboards en Power BI para comunicar hallazgos.",
+  "Me gusta entender el problema antes de programar y aprendo rápido por mi cuenta. Busco mi primera oportunidad como desarrollador junior, analista de datos o practicante.",
 ];
 
-export const TECH_ICONS = ["⚛️", "N", "TS", "◆", "🐍", "🐘", "…"];
+// El orden debe coincidir con el orden de las secciones en App.jsx
+export const NAV_LINKS = [
+  { label: "Inicio", id: "home" },
+  { label: "Sobre mí", id: "about" },
+  { label: "Proyectos", id: "projects" },
+  { label: "Servicios", id: "skills" },
+  { label: "Trayectoria", id: "achievements" },
+  { label: "FAQ", id: "faq" },
+  { label: "Contacto", id: "contact" },
+];
+
+export const TECH_STACK = [
+  { name: "Laravel", short: "Lv" },
+  { name: "Angular", short: "Ng" },
+  { name: "Java (Android)", short: "Jv" },
+  { name: "PostgreSQL", short: "PG" },
+  { name: "Python (pandas)", short: "Py" },
+  { name: "Power BI", short: "BI" },
+];
 
 export const HERO_STATS = [
-  { value: "1+", label: "Años de experiencia" },
-  { value: "5+", label: "Proyectos completados" },
-  
+  { value: "1+", label: "Año de experiencia" },
+  { value: "7+", label: "Proyectos completados" },
 ];
 
 export const ABOUT_META = [
-  { icon: User, label: "Nombre", value: "Jossue Eugenio" },
-  { icon: MapPin, label: "Ubicación", value: "Bucaramanga, Colombia" },
-  { icon: Mail, label: "Email", value: "jossue.eugeio16@gmail.com" },
-  { icon: CircleCheck, label: "Disponibilidad", value: "Disponible", accent: true },
+  { icon: User, label: "Nombre", value: PROFILE.name },
+  { icon: MapPin, label: "Ubicación", value: PROFILE.location },
+  { icon: Mail, label: "Email", value: PROFILE.email },
+  {
+    icon: CircleCheck,
+    label: "Disponibilidad",
+    value: PROFILE.available ? "Disponible para prácticas" : "No disponible",
+    accent: PROFILE.available,
+  },
 ];
 
 // Los primeros 3 = fila superior del bento, los últimos 2 (big:true) = fila inferior
@@ -50,53 +81,108 @@ export const SERVICES_BENTO = [
   {
     icon: Code2,
     title: "Desarrollo Web",
-    desc: "Construyo aplicaciones web rápidas y modernas, responsivas en cualquier dispositivo.",
+    desc: "Construyo aplicaciones web con Laravel y Angular, responsivas y fáciles de mantener.",
   },
   {
     icon: Server,
     title: "Desarrollo Backend",
-    desc: "Diseño APIs robustas y soluciones del lado del servidor escalables.",
+    desc: "Diseño APIs REST organizadas y seguras, con lógica de negocio clara del lado del servidor.",
   },
   {
     icon: Database,
     title: "Diseño de Bases de Datos",
-    desc: "Creo esquemas de base de datos eficientes, seguros y optimizados.",
+    desc: "Modelo bases de datos en PostgreSQL con integridad, triggers de auditoría y consultas optimizadas.",
   },
   {
-    icon: Cloud,
+    icon: BarChart3,
     title: "Análisis de Datos",
-    desc: "Proceso y analizo flujos de información complejos para extraer patrones clave, generar métricas e impulsar la toma de decisiones estratégicas basadas en evidencia.",
+    desc: "Limpio y exploro datos con Python (pandas) y SQL, y comunico hallazgos en dashboards de Power BI para apoyar la toma de decisiones.",
     big: true,
   },
   {
-    icon: Layers,
+    icon: Smartphone,
     title: "Desarrollo Móvil",
-    desc: "Creo aplicaciones nativas para Android (Java) estructuradas bajo Clean Architecture, inyección de dependencias y sincronización con servicios remotos.",
+    desc: "Desarrollo apps Android nativas en Java con arquitectura MVVM, pensadas para ser estables, ordenadas y fáciles de escalar.",
     big: true,
   },
 ];
 
+// image: ruta en public/ (ej. "/projects/inventario.png"); demo/repo: deja "" para ocultar el botón
 export const PROJECTS = [
-  { title: "Gestión de Inventario de Libros", tag: "Laravel & Angular", tagColor: "#8B7CF6", desc: "Aplicación web full-stack con arquitectura desacoplada (API REST), interfaz SPA y auditoría automatizada de datos." },
-  { title: "TaskSync Móvil", tag: "Android", tagColor: "#4ADE80", desc: "Aplicación nativa para la organización de tareas con inyección de dependencias y sincronización con APIs RESTful." },
-  { title: "Módulo de Auditoría en PL/pgSQL", tag: "PostgreSQL", tagColor: "#336791", desc: "Diseño de base de datos relacional con disparadores (triggers) y funciones avanzadas para garantizar la integridad de los datos." },
-  { title: "Análisis & Insights de Datos", tag: "Data Analysis", tagColor: "#F59E0B", desc: "Procesamiento y visualización de conjuntos de datos para la extracción de métricas clave y apoyo en decisiones estratégicas." },
+  {
+    title: "Sistema de gestión de inventario",
+    tag: "Laravel",
+    tagColor: "#F87171",
+    desc: "Aplicación web para controlar productos, entradas y salidas de stock, con API REST, frontend en Angular y PostgreSQL.",
+    image: "", demo: "", repo: "",
+  },
+  {
+    title: "App Android de gestión de tareas",
+    tag: "Java",
+    tagColor: "#4ADE80",
+    desc: "App nativa para crear, organizar y dar seguimiento a tareas, construida con arquitectura MVVM.",
+    image: "", demo: "", repo: "",
+  },
+  {
+    title: "Análisis de sismos en Santander",
+    tag: "Python",
+    tagColor: "#60A5FA",
+    desc: "Análisis de datos sísmicos y modelo de predicción para apoyar decisiones de construcción en el área de Santander.",
+    image: "", demo: "", repo: "",
+  },
+  {
+    title: "Control de gastos y ahorros",
+    tag: "React",
+    tagColor: "#0031d2",
+    desc: "Seguimiento de mis gastos personales y metas de ahorro, con categorías y visualizaciones para entender en qué se va el dinero.",
+    image: "", demo: "", repo: "",
+  },
 ];
 
 export const MILESTONES = [
-  { year: "2024", icon: GraduationCap, title: "Inicio en Ingeniería de Software", desc: "Ingresé al programa profesional en Ingeniería de Software y Sistemas de Información en las Unidades Tecnológicas de Santander (UTS)." },
-  { year: "2025", icon: BookOpen, title: "Investigación y Formación Técnica", desc: "Vinculación a semillero de investigación académica y fortalecimiento continuo en bootcamps y plataformas de desarrollo." },
-  { year: "2025", icon: Cpu, title: "Sistemas Embebidos y POO", desc: "MDesarrollo de proyectos en C++ con Arduino y profundización en arquitectura de software y patrones de diseño en Java." },
-  { year: "2026", icon: Code, title: "Especialización Full-Stack & Bases de Datos", desc: "Construcción de aplicaciones desacopladas en Laravel y Angular, integradas con lógica avanzada y disparadores en PostgreSQL (PL/pgSQL)." },
-  { year: "2026", icon: Rocket, title: "Portafolio y Presencia Profesional", desc: "Lanzamiento de proyectos destacados, estructuración de portafolio técnico y posicionamiento profesional." },
+  {
+    year: "2024",
+    icon: GraduationCap,
+    title: "Inicio en Ingeniería de Software",
+    desc: "Ingresé al programa profesional en Ingeniería de Software y Sistemas de Información en las Unidades Tecnológicas de Santander (UTS).",
+  },
+  {
+    year: "2025",
+    icon: FlaskConical,
+    title: "Investigación y Formación Técnica",
+    desc: "Vinculación a semillero de investigación académica y fortalecimiento continuo en bootcamps y plataformas de desarrollo.",
+  },
+  {
+    year: "2025",
+    icon: Cpu,
+    title: "Sistemas Embebidos y POO",
+    desc: "Desarrollo de proyectos en C++ con Arduino y profundización en arquitectura de software y patrones de diseño en Java.",
+  },
+  {
+    year: "2026",
+    icon: Layers,
+    title: "Especialización Full-Stack & Bases de Datos",
+    desc: "Construcción de aplicaciones desacopladas en Laravel y Angular, integradas con lógica avanzada y disparadores en PostgreSQL (PL/pgSQL).",
+  },
+  {
+    year: "2026",
+    icon: Rocket,
+    title: "Portafolio y Presencia Profesional",
+    desc: "Lanzamiento de proyectos destacados, estructuración de portafolio técnico y posicionamiento profesional.",
+  },
 ];
+
+// Deja el arreglo vacío si aún no tienes testimonios reales: la columna se oculta
+export const TESTIMONIALS = [];
 
 export const FAQS = [
-  { q: "¿Con qué tecnologías trabajas?", a: "React, Next.js, Node.js, Agular, laravel, Python, TypeScript y bases de datos SQL/NoSQL." },
-  { q: "¿Estás disponible para proyectos freelance?", a: "Sí, actualmente tengo disponibilidad para nuevos proyectos." },
-  { q: "¿Cómo garantizas la entrega a tiempo?", a: "Divido el trabajo en sprints cortos con entregas y feedback constante." },
-  { q: "¿Ofreces soporte después del lanzamiento?", a: "Sí, ofrezco soporte y mantenimiento posterior al lanzamiento." },
+  { q: "¿Con qué tecnologías trabajas?", a: "Laravel, Angular, Java (Android), PostgreSQL, Python con pandas, SQL y Power BI." },
+  { q: "¿Estás disponible para prácticas o empleo?", a: "Sí, busco mi primera oportunidad como desarrollador junior, analista de datos o practicante." },
+  { q: "¿Cómo abordas un proyecto nuevo?", a: "Primero entiendo el problema y los datos; luego divido el trabajo en entregas pequeñas para validar avances." },
+  { q: "¿Puedo ver el código de tus proyectos?", a: "Sí, encuentras mis repositorios en GitHub (enlace en el pie de página)." },
 ];
 
-export const FOOTER_LINKS = ["Home", "About", "Skills", "Contact"];
-export const FOOTER_SERVICES = ["Desarrollo Web", "Desarrollo Backend", "Diseño de Bases de Datos", "Cloud & DevOps"];
+export const FOOTER_LINKS = NAV_LINKS.filter((l) =>
+  ["home", "about", "projects", "contact"].includes(l.id)
+);
+export const FOOTER_SERVICES = SERVICES_BENTO.map((s) => s.title);

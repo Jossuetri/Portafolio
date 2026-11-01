@@ -13,8 +13,8 @@ Abre [http://localhost:5173](http://localhost:5173)
 
 ## Tecnologías
 
-- React + Vite
-- Tailwind CSS
+- React 19 + Vite
+- Tailwind CSS 4
 - Lucide React (iconos)
 
 ## Personalización
